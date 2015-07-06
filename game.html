@@ -1,0 +1,23 @@
+<script>
+
+var guess,
+    answer,
+    message;
+
+guess = prompt("I love my favorite game: Minecraft Sweeper! I've been playing it for two years. Can you guess how many hours I've played it?");
+console.log("The user's guess is " + guess + ".");
+
+answer = 2200;
+console.log("The answer is " + answer + ".");
+
+if (guess > answer) {
+  message = "Nope! Too high! I love my game but I gotta have a life, too.";
+  } else if (guess < answer) {
+  message = "Too low! I'm a bigger geek than you give me credit for.";
+  } else {
+  message = "Magic!! You're right! Want to compare high scores?";
+};
+
+alert(message);
+
+</script>
