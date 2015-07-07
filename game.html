@@ -23,6 +23,10 @@ var guessingGame = function() {
   } else {
     message = "Magic!! You're right! Want to compare high scores?";
     alert(message);
+    var wantsToDownload = confirm("Do you want to download the game and play too?");
+    if(wantsToDownload) {
+      window.location.assign("https://play.google.com/store/apps/details?id=com.misiunas.mcs&hl=en");
+    }
   }
 };
 
