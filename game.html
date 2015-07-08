@@ -1,56 +1,37 @@
 <script>
 
-var counter = 0;
-var guessingGame = function() {
+var GuessingGame = function(guess){
+  this.guess = guess;
+  this.answer = 2200;
+  this.message = message;
+  this.tryAgain = function (){
+var guess;
+var answer = 2200;
 
-  var guess,
-      answer,
-      message;
+guess = prompt("Guess how long I have been playing Mindcraft Sweeper?")
 
-  var tryAgain = function() {
-      if(confirm("Do you want to keep guessing?")) {
-        guessingGame();
-      } else {
-        alert("I've played 2200 hours of MineCraft Sweeper!! Thanks for playing!");
+    for( i = 0; i < 10; i++) {
+      if (guess > answer) {
+        prompt("Nope! Too high! I love my game but I gotta have a life, too. Guess again.");
+      } else if (guess < answer) {
+        prompt("Too low! I'm a bigger geek than you give me credit for. Guess again.");
+      } else if (guess === answer) {
+        alert("Magic!! You're right! Want to compare high scores?");
       }
+
     }
 
-  guess = prompt("I love my favorite game: MineCraft Sweeper! I've been playing it for two years. Can you guess how many hours I've played it?");
-  console.log("The user's guess is " + guess + ".");
 
-  answer = 2200;
-  console.log("The answer is " + answer + ".");
-
-  if (guess > answer) {
-    message = "Nope! Too high! I love my game but I gotta have a life, too.";
-    alert(message);
-    counter++;
-    if (counter > 10) {
-      tryAgain();
-    } else {
-      guessingGame();
-    }
-  } else if (guess < answer) {
-    message = "Too low! I'm a bigger geek than you give me credit for.";
-    alert(message);
-    counter++;
-    if (counter > 10) {
-      tryAgain();
-    } else {
-      guessingGame();
-    }
+if (confirm("Do you want to download the game and play too?")) {
+    window.location.assign("https://play.google.com/store/apps/details?id=com.misiunas.mcs&hl=en");
   } else {
-    message = "Magic!! You're right! Want to compare high scores?";
-    alert(message);
-    var wantsToDownload = confirm("Do you want to download the game and play too?");
-    if(wantsToDownload) {
-      window.location.assign("https://play.google.com/store/apps/details?id=com.misiunas.mcs&hl=en");
-    } else {
-      alert("Thanks for playing!");
-    }
+    alert("Thanks for playing!");
   }
-};
 
-guessingGame();
+if (confirm("Do you want to keep guessing?")) {
+    guessingGame();
+} else {
+  alert("I've played 2200 hours of MineCraft Sweeper!! Thanks for playing!");
+}
 
 </script>
